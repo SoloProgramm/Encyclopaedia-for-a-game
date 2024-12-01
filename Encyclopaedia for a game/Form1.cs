@@ -49,5 +49,14 @@ namespace Encyclopaedia_for_a_game
         {
 
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            int index = listBox1.SelectedIndex;
+            if (index != -1) 
+            {
+                listBox1.Items.RemoveAt(index);
+            }
+        }
     }
 }

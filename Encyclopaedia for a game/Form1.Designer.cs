@@ -41,35 +41,37 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 24);
+            listBox1.Location = new Point(14, 32);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(213, 484);
+            listBox1.Size = new Size(243, 644);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(6, 22);
+            textBox1.Location = new Point(7, 29);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 23);
+            textBox1.Size = new Size(244, 27);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(231, 24);
+            label1.Location = new Point(264, 32);
             label1.Name = "label1";
-            label1.Size = new Size(0, 15);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 2;
             label1.Click += label1_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(6, 51);
+            button1.Location = new Point(7, 68);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(214, 37);
+            button1.Size = new Size(245, 49);
             button1.TabIndex = 4;
             button1.Text = "Add Entry";
             button1.UseVisualStyleBackColor = true;
@@ -77,43 +79,49 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.Location = new Point(234, 485);
+            DeleteButton.Location = new Point(267, 647);
+            DeleteButton.Margin = new Padding(3, 4, 3, 4);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(75, 23);
+            DeleteButton.Size = new Size(86, 31);
             DeleteButton.TabIndex = 5;
             DeleteButton.Text = "Delete";
             DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(textBox1);
-            groupBox1.Location = new Point(237, 24);
+            groupBox1.Location = new Point(271, 32);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(226, 108);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(258, 144);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "New Entry Creator";
             // 
             // button2
             // 
-            button2.Location = new Point(515, 299);
+            button2.Location = new Point(278, 184);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(86, 31);
             button2.TabIndex = 7;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(804, 560);
+            ClientSize = new Size(919, 747);
             Controls.Add(button2);
             Controls.Add(groupBox1);
             Controls.Add(DeleteButton);
             Controls.Add(label1);
             Controls.Add(listBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "AC6 Build Cataloge ";
             Load += Form1_Load;
