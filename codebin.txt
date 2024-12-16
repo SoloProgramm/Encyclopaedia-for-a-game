@@ -1,0 +1,97 @@
+            //string newEntry = textBox1.Text;
+
+            //Empty entry check
+            bool Check = string.IsNullOrEmpty(newEntry);
+
+            if (Check == false)
+            {
+                listBox1.Items.Add(newEntry);
+
+                //TextBox Reset
+                textBox1.Text = "";
+                textBox1.Focus();
+
+                //File Update to add new entry
+                using (TextWriter TW = new StreamWriter(fileLocation))
+                {
+                    foreach (string itemText in listBox1.Items)
+                    {
+                        TW.WriteLine(itemText);
+                    }
+                }
+            }
+
+            for (int i = 0; i < lines.Count; i++)
+            {
+                listBox1.Items.Add(lines[i]);
+            }
+                        listBox1.Items.Clear();
+
+            //listbox populator, populates via a loop
+            var fileContent = System.IO.File.ReadAllLines(fileLocation);
+            List<string> lines = new List<string>(fileContent);
+
+            
+                Genre = Genre + "-" + Title;
+
+                length = length + "-" + Title;
+
+                Title = Title + "-title";
+
+            var fileContent = System.IO.File.ReadAllLines(fileLocation);
+            List<string> lines = new List<string>(fileContent);
+            for (int i = 0; i < lines.Count; i++)
+            {
+                listBox1.Items.Add(lines[i]);
+            }
+            // Read all lines from the file
+            var allLines = System.IO.File.ReadAllLines(fileLocation);
+
+            // Select only titles (assuming titles are the first lines)
+            var titles = allLines.Select(line => line.Trim()).ToList(); // Trim whitespaces
+
+            // Add titles to the list box
+            listBox1.Items.AddRange(titles);
+            
+                for (int i = 0; i < titleDisplay.Length; i++)
+                {
+                    if (titleDisplay[i] == "title
+                }
+                
+            var fileContent = System.IO.File.ReadAllLines(fileLocation);
+            List<string> lines = new List<string>(fileContent);
+            foreach (var line in fileContent)
+            {
+                string[] titleDisplay = line.Split(',');
+
+                //loops through string to remove unwanted characte
+
+                listBox1.Items.Add(titleDisplay[0]);
+            }
+
+public class Game
+{
+    public string Title { get; private set; }
+
+    public Game(string title)
+    {
+        Title = title;
+    }
+}
+public class Game2
+{
+    public string Genre { get; private set; }
+
+    public Game2(string genre)
+    {
+        Genre = genre;
+    }
+}
+public class Game3
+{
+    public string Length { get; private set; }
+
+    public Game3(string length)
+    {
+        Length = length;
+    }
