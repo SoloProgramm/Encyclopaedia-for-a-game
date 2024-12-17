@@ -10,10 +10,10 @@ namespace Encyclopaedia_for_a_game
     {
         public static class GameEnriesFile
         {
-            public static readonly string Filepath = @"C:\Users\solly\source\repos\Encyclopaedia for a game\Encyclopaedia for a game\Data\GameEntries.json";
+            public static string Direct = Directory.GetCurrentDirectory();
+            public static readonly string Filepath = Path.Combine(Direct,"GameEntries.json");
         }
     }
-
     public class GameEntry
     {
         public string? Title { get; set; }
