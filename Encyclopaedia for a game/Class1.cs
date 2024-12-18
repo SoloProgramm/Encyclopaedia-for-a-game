@@ -10,8 +10,8 @@ namespace Encyclopaedia_for_a_game
     {
         public static class GameEnriesFile
         {
-            public static string Direct = Directory.GetCurrentDirectory();
-            public static string Filepath = Path.Combine(Direct,"GameEntries.json");
+            static public string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            static public string Filepath = Path.Combine(path, "GameEntries.json");
         }
     }
     public class GameEntry

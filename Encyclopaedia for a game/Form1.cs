@@ -29,8 +29,11 @@ namespace Encyclopaedia_for_a_game
         private void refresh()
         {
             //clears the list box
-            listBox1.Items.Clear();
-
+            GameListBox.Items.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+         
             var gamelist = JsonDeserializer();
 
             //Gets the games titles to be displayed in the list box
@@ -40,7 +43,7 @@ namespace Encyclopaedia_for_a_game
             List<string> lines = new List<string>(titles);
             for (int i = 0; i < lines.Count; i++)
             {
-                listBox1.Items.Add(lines[i]);
+                GameListBox.Items.Add(lines[i]);
             }
 
             //gets all the lengths and adds them together to displays them
@@ -69,15 +72,20 @@ namespace Encyclopaedia_for_a_game
             else
             {
                 //checks if file path exists displays error it not
-                string message = "File Cannot be found";
+                string message = "File Could Not Be Found A New File Created";
                 string title = "Error";
                 MessageBox.Show(message, title);
+                //Creates the file in the documents file
+                using (FileStream fs = System.IO.File.Create(Filepath))
+                { }
+                System.IO.File.WriteAllText(Filepath, "[]");
+                refresh();
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void GameListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = listBox1.SelectedIndex;
+            int index = GameListBox.SelectedIndex;
             if (index == -1) return;
 
             var gamelist = JsonDeserializer();
@@ -103,13 +111,13 @@ namespace Encyclopaedia_for_a_game
         {
             var gameList = JsonDeserializer();
 
-            int index = listBox1.SelectedIndex;
+            int index = GameListBox.SelectedIndex;
 
             if (index != -1)
             {
                 //removes the selected game from the listbox
                 //removes the selected game from the json file
-                listBox1.Items.RemoveAt(index);
+                GameListBox.Items.RemoveAt(index);
                 gameList.RemoveAt(index);
 
                 //updates and reserializes the json file
@@ -125,20 +133,10 @@ namespace Encyclopaedia_for_a_game
             f2.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Refreashbutton_Click(object sender, EventArgs e)
         {
             //not working
             refresh();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
