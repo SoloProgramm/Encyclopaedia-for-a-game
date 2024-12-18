@@ -69,7 +69,7 @@ namespace Encyclopaedia_for_a_game
             else
             {
                 //checks if file path exists displays error it not
-                string message = Filepath;
+                string message = "File Cannot be found";
                 string title = "Error";
                 MessageBox.Show(message, title);
             }

@@ -11,7 +11,7 @@ namespace Encyclopaedia_for_a_game
         public static class GameEnriesFile
         {
             public static string Direct = Directory.GetCurrentDirectory();
-            public static readonly string Filepath = Path.Combine(Direct,"GameEntries.json");
+            public static string Filepath = Path.Combine(Direct,"GameEntries.json");
         }
     }
     public class GameEntry
